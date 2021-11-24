@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Тесты - Жадан</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+	
+	<header>
+		<nav> 
+			<ul>
+				<li> <a href="index.html">Главная</a>
+				<li> <a href="about.html">Обо мне</a>
+				<li> <a href="interests.html">Мои интересы</a>
+				<li> <a href="study.html">Учеба</a>
+				<li> <a href="photos.html">Фотоальбом</a>
+				<li> <a href="contacts.html">Контакт</a>
+				<li> <a href="tests.html">Тест</a>
+
+			</ul>
+		</nav>
+	</header>
+	<section class="container">
+			<h1 class="centered">
+				Вопросы по дисциплине				
+			</h1>
+			<h1 class="centered">
+				Основы программирования и алгоритмические языки
+			</h1>
+			<div class="contact">
+				<form action="mailto:zhadan.viktor@gmail.com" method="POST"  
+				onsubmit="return validateQuestionForm(this)">
+					<label for="name">ФИО</label>
+					<input type="text" placeholder="ФИО" id="name" required>
+					<label for="group-select">Группа</label>
+					<select name="groups" id="group-select" required>
+					    <option value="">Выберите группу</option>
+					    <option value="IS-b-19-1">ИС/б-19-1-о</option>
+					    <option value="IS-b-19-2">ИС/б-19-2-о</option>
+					    <option value="PI-b-19-1">ПИ/б-19-1-о</option>
+					    <option value="IVT-b-19-1">ИВТ/б-19-1-о</option>
+					    <option value="IVT-b-19-2">ИВТ/б-19-2-о</option>
+					    <option value="PIN-b-19-1">ПИН/б-19-1-о</option>
+					</select>
+					<div class="question">
+						<h2>Вопрос 1:</h2>
+						<p>Lorem Ipsum</p>
+						
+						<div class="answers">
+						  <label>Выберите вариант ответа:
+						  <select name="answer_1">
+								<option value="">Выберите Ответ</option>
+						      <option value="ans_1-1">Один</option>
+						      <option value="ans_1-2">Два</option>
+						      <option value="ans_1-3">Три</option>
+						      <option value="ans_1-4">Один</option>
+						  </select>
+						</label>
+						</div>
+					</div>
+					
+					<div class="question">
+						<h2>Вопрос 2:</h2>
+						<p>Lorem Ipsum</p>
+						<div class="answers">
+						  	<textarea name="answer_2" id="ans_2" placeholder="Ответ"></textarea>
+						</div>
+					</div>
+
+					<div class="question">
+						<h2>Вопрос 3:</h2>
+						<p>Lorem Ipsum</p>
+						<div class="answers">
+							<input type="radio" id="ans_3-1" name="answer_3" value="ans_3-1">
+							<label for="ans_3-1">Ответ 1</label>
+							<input type="radio" id="ans_3-2" name="answer_3" value="ans_3-2">
+							<label for="ans_3-2">Ответ 2</label>
+							<input type="radio" id="ans_3-3" name="answer_3" value="ans_3-3">
+							<label for="ans_3-3">Ответ 3</label>
+						</div>
+					</div>
+					
+
+					<div class="submit-container">
+						<input type="submit" value="Отправить" class="submit">
+						<input type="reset" value="Очистить форму" class="submit">
+					</div>
+				</form>
+			</div>
+		</section>	
+
+	</body>
+</html>

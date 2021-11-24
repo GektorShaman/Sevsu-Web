@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Контакт - Жадан</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+	
+	<header>
+		<nav> 
+			<ul>
+				<li> <a href="index.html">Главная</a>
+				<li> <a href="about.html">Обо мне</a>
+				<li> <a href="interests.html">Мои интересы</a>
+				<li> <a href="study.html">Учеба</a>
+				<li> <a href="photos.html">Фотоальбом</a>
+				<li> <a href="contacts.html">Контакт</a>
+				<li> <a href="tests.html">Тест</a>
+
+			</ul>
+		</nav>
+	</header>
+	<section class="container">
+			<h1 class="centered">
+				Контакт			
+			</h1>
+			<div class="contact">
+				<form action="mailto:zhadan.viktor@gmail.com" method="POST"
+				onsubmit="return validateContactForm(this)">
+					<label for="name">ФИО</label>
+					<input type="text" placeholder="ФИО" id="name">
+					<label for="phone">Телефон</label>
+					<input type="text" placeholder="Телефон" id="phone">
+					<label>Пол</label>
+					<div class="gender-select">						
+						<input type="radio" name="gender" id="gender_male" value="male" checked>
+						<label for="gender_male">Мужской</label>
+						<input type="radio" name="gender" id="gender_female" value="female">
+						<label for="gender_female">Женский</label>
+					</div>	
+					<label for="age-select">Возраст</label> <br>
+					<select name="ages" id="age-select">
+					    <option value="">Выберите возраст</option>
+					    <option value="0">меньше 15</option>
+					    <option value="1">от 16 до 20</option>
+					    <option value="2">от 21 до 30</option>
+					    <option value="3">больше 30</option>
+					</select> <br>
+
+
+					<label for="email">Электронная почта</label>
+					<input type="email" placeholder="Электронная почта" id="email">
+					<textarea name="message" id="message" placeholder="Сообщение"></textarea>
+					<div class="submit-container">
+						<input type="submit" value="Отправить" class="submit">
+						<input type="reset" value="Очистить форму" class="submit">
+					</div>
+				</form>
+			</div>
+		</section>	
+	</body>
+</html>
