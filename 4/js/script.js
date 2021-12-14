@@ -156,26 +156,26 @@ $(document).ready(function () {
         $(".active").append($("<div>", { class: "imRight" })
         .css({
             position: "fixed",
-            top: "730px",
-            right: "300px", 
+            top: "640px",
+            right: "640px", 
         }));
         $(".active").append($("<div>", { class: "imLeft"})
         .css({
             position: "fixed",
-            top: "730px",
-            left: "300px",
+            top: "640px",
+            left: "640px",
         }));
       $(".active").append($("<div>", { class: "imgInfo", text: "Фото "+ currentPhotoInSliderStart +" из "+ countPhotos })
         .css({
             position: "fixed",
-            top: "738px",
-            left: "368px", 
+            top: "648px",
+            left: "720px", 
         }));
       $(".active").append($("<div>", { class: "close", text: "Close" })
         .css({
             position: "fixed",
-            top: "738px",
-            right: "170px", 
+            top: "648px",
+            right: "500px", 
         }));
       
       $(".close").click(function () {
