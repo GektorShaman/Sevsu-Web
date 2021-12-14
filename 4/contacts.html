@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Контакт - Жадан</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="js/jQuery.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body onbeforeunload="saveToCookies('contacts')">
+	
+	<header>
+		<nav> 
+			<div id="date"></div>
+				<div id="time-node"></div>
+				<script>
+					getDateAndTime();
+				</script>
+			<ul>
+				<li class = "menu_nav_item"
+					onmouseover="onMouseOverImage(this)"
+         			onmouseout="onMouseOutImage(this)">
+         			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+         			<a href="index.html">Главная</a>
+				<li class = "menu_nav_item"
+					onmouseover="onMouseOverImage(this)"
+         			onmouseout="onMouseOutImage(this)">
+         			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+         			<a href="about.html">Обо мне</a>
+				<li class = "menu_nav_item" onclick="showDropdown()">
+         			<img class = "menu_logo_img" src="images/logo.jpg"/>
+         			<a >Мои интересы</a>
+					<ul id="interest_drop_menu" class="dropmenu">
+		                <li><a href="interests.html#games">Мои любимые игры</a></li>
+		                <li><a href="interests.html#films">Мои любимые фильмы</a></li>
+		                <li><a href="interests.html#music">Моя любимая музыка</a></li>
+		            </ul>
+				<li class = "menu_nav_item"
+					onmouseover="onMouseOverImage(this)"
+         			onmouseout="onMouseOutImage(this)">
+         			 <img class = "menu_logo_img" src="images/logo.jpg"/> 
+         			<a href="study.html">Учеба</a>
+				<li class = "menu_nav_item"
+					onmouseover="onMouseOverImage(this)"
+         			onmouseout="onMouseOutImage(this)">
+         			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+         			<a href="photos.html">Фотоальбом</a>
+				<li class = "menu_nav_item">
+         			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+					<a href="contacts.html">Контакт</a>
+         		<li class = "menu_nav_item"
+					onmouseover="onMouseOverImage(this)"
+         			onmouseout="onMouseOutImage(this)">
+         			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+         			<a href="tests.html">Тест</a>
+			</ul>
+		</nav>
+	</header>
+	<section class="container">
+			<h1 class="centered">
+				Контакт			
+			</h1>
+			<div class="contact">
+				<form name = "contact_form" action="mailto:zhadan.viktor@gmail.com" method="POST"
+				onsubmit="return validate_form()">
+					<label for="name">ФИО</label>
+					<input type="text" placeholder="ФИО" id="name" onblur = "validate_fio('hintName')" onclick = "hideCalendar()">
+					<span class="hint" id = "hintName"></span><br>
+					<div class="popover">Введите ваше ФИО</div>
+
+
+					<label for="phone">Телефон</label>
+					<input type="text" placeholder="Телефон" id="phone" onblur = "validate_phone('hintPhone')" onclick = "hideCalendar()">
+					<br>
+					<span class = "hint" id = "hintPhone"></span>
+					<br>
+					<label>Пол</label>
+					<div class="gender-select">						
+						<input type="radio" name="gender" id="gender_male" value="male" onclick = "hideCalendar()" checked>
+						<label for="gender_male">Мужской</label>
+						<input type="radio" name="gender" id="gender_female" value="female" onclick = "hideCalendar()">
+						<label for="gender_female">Женский</label>
+					</div>	
+					
+					<label for="dateOfBirth">Дата рождения</label>
+					<input name = "dateOfBirth" id = "dateOfBirth" onclick = "showCalendar(new Date())" readonly value="">
+					<br>
+					<div id = "calendar">
+						Месяц: <select id = "month" onclick = "redrawCalendar()">
+
+						</select>
+						Год: <select id = "year" onclick="redrawCalendar()">
+
+						</select>
+
+					</div>
+
+					<label for="email">Электронная почта</label>
+					<input type="email" placeholder="Электронная почта" id="email" onblur = "validate_email('hintMail')" onclick = "hideCalendar()">
+					<br>
+					<span class="hint" id = "hintMail"></span>
+					<br>
+					<textarea name="message" id="message" placeholder="Сообщение" onblur = "validate_mes()" onclick = "hideCalendar()"></textarea>
+					<div class="submit-container">
+						<input type="submit" value="Отправить" class="submit">
+						<input type="reset" value="Очистить форму" class="submit">
+					</div>
+				</form>
+			</div>
+		</section>	
+	</body>
+</html>
