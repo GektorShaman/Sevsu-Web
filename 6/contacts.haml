@@ -1,0 +1,49 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Контакт - Жадан
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/jQuery.js"}
+    %script{:src => "js/script.js"}
+  %body{:onbeforeunload => "saveToCookies('contacts')"}
+    .body
+    = Haml::Engine.new(File.read('./includes/_header.haml')).render
+    %section.container
+      %h1.centered
+        Контакт
+      .contact
+        %form{:action => "mailto:zhadan.viktor@gmail.com", :method => "POST", :name => "contact_form", :onsubmit => "return validate_form()"}
+          %label{:for => "name"} ФИО
+          %input#name{:onblur => "validate_fio('hintName')", :onclick => "hideCalendar()", :placeholder => "ФИО", :type => "text"}/
+          %span#hintName.hint
+          %br/
+          .popover Введите ваше ФИО
+          %label{:for => "phone"} Телефон
+          %input#phone{:onblur => "validate_phone('hintPhone')", :onclick => "hideCalendar()", :placeholder => "Телефон", :type => "text"}/
+          %br/
+          %span#hintPhone.hint
+          %br/
+          %label Пол
+          .gender-select
+            %input#gender_male{:checked => "checked", :name => "gender", :onclick => "hideCalendar()", :type => "radio", :value => "male"}/
+            %label{:for => "gender_male"} Мужской
+            %input#gender_female{:name => "gender", :onclick => "hideCalendar()", :type => "radio", :value => "female"}/
+            %label{:for => "gender_female"} Женский
+          %label{:for => "dateOfBirth"} Дата рождения
+          %input#dateOfBirth{:name => "dateOfBirth", :onclick => "showCalendar(new Date())", :readonly => "readonly", :value => ""}/
+          %br/
+          #calendar
+            Месяц:
+            %select#month{:onclick => "redrawCalendar()"}
+            Год:
+            %select#year{:onclick => "redrawCalendar()"}
+          %label{:for => "email"} Электронная почта
+          %input#email{:onblur => "validate_email('hintMail')", :onclick => "hideCalendar()", :placeholder => "Электронная почта", :type => "email"}/
+          %br/
+          %span#hintMail.hint
+          %br/
+          %textarea#message{:name => "message", :onblur => "validate_mes()", :onclick => "hideCalendar()", :placeholder => "Сообщение"}
+          .submit-container
+            %input.submit{:type => "submit", :value => "Отправить"}/
+            %input.submit{:type => "reset", :value => "Очистить форму"}/

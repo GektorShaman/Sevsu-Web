@@ -1,0 +1,38 @@
+%header
+  %nav
+    #date
+    #time-node
+    :javascript
+      getDateAndTime();
+    %ul
+      %li.menu_nav_item
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "index.html"} Главная
+      %li.menu_nav_item{:onmouseout => "onMouseOutImage(this)", :onmouseover => "onMouseOverImage(this)"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "about.html"} Обо мне
+      %li.menu_nav_item{:onclick => "showDropdown()"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a Мои интересы
+        %ul#interest_drop_menu.dropmenu
+          %li
+            %a{:href => "interests.html#games"} Мои любимые игры
+          %li
+            %a{:href => "interests.html#films"} Мои любимые фильмы
+          %li
+            %a{:href => "interests.html#music"} Моя любимая музыка
+      %li.menu_nav_item{:onmouseout => "onMouseOutImage(this)", :onmouseover => "onMouseOverImage(this)"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "study.html"} Учеба
+      %li.menu_nav_item{:onmouseout => "onMouseOutImage(this)", :onmouseover => "onMouseOverImage(this)"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "photos.html"} Фотоальбом
+      %li.menu_nav_item{:onmouseout => "onMouseOutImage(this)", :onmouseover => "onMouseOverImage(this)"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "contacts.html"} Контакт
+      %li.menu_nav_item{:onmouseout => "onMouseOutImage(this)", :onmouseover => "onMouseOverImage(this)"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "tests.html"} Тест
+      %li.menu_nav_item{:onmouseout => "onMouseOutImage(this)", :onmouseover => "onMouseOverImage(this)"}
+        %img.menu_logo_img{:src => "images/logo.jpg"}/
+        %a{:href => "watch_history.html"} История просмотра

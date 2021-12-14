@@ -1,0 +1,23 @@
+!!!
+-@photos = ['https://picsum.photos/id/500/500','https://picsum.photos/id/501/500','https://picsum.photos/id/502/500','https://picsum.photos/id/503/500','https://picsum.photos/id/504/500','https://picsum.photos/id/505/500','https://picsum.photos/id/506/500','https://picsum.photos/id/507/500','https://picsum.photos/id/508/500','https://picsum.photos/id/509/500','https://picsum.photos/id/510/500','https://picsum.photos/id/511/500','https://picsum.photos/id/512/500','https://picsum.photos/id/513/500','https://picsum.photos/id/514/500']
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Фотоальбом - Жадан
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/jQuery.js", :type => "text/javascript"}
+    %script{:src => "js/script.js"}
+  %body{:onbeforeunload => "saveToCookies('photos')"}
+    .body
+    = Haml::Engine.new(File.read('./includes/_header.haml')).render
+    .container
+      %h1.centered
+        Фотоальбом
+      .image-gallery
+        -@photos.each do |v|
+          -if @photos.index(v)%4 == 0
+            .row
+              -(@photos.index(v)..(@photos.index(v)+3)).each do |i|
+                %div.col
+                  %img.content__image{:src=> @photos[i],:dataenlargeable=>'null'}
+                    %p Photo #{i+1}
