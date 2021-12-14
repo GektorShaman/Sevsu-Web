@@ -1,0 +1,282 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Учёба - Жадан
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/script.js"}
+  %body{:onbeforeunload => "saveToCookies('study')"}
+    .body
+    = Haml::Engine.new(File.read('./includes/_header.haml')).render
+    .container
+      %h1.centered
+        Учеба
+      %h2
+        Севастопольский государственный университет
+      %h2
+        Институт информационных технологий и управления в технических системах
+      %table{:border => "1", :cellpadding => "5", :cellspacing => "0"}
+        %tr
+          %th{:rowspan => "3"} №
+          %th{:rowspan => "3"} Дисциплина
+          %th{:colspan => "12"}
+            Часов в неделю
+            = succeed "(\u{43b}\u{435}\u{43a}\u{446}\u{438}\u{439}," do
+              %br/
+        %tr
+          %th{:colspan => "6"} 1 курс
+          %th{:colspan => "6"} 2 курс
+        %tr
+          %th{:colspan => "3"} 1 сем
+          %th{:colspan => "3"} 2 сем
+          %th{:colspan => "3"} 3 сем
+          %th{:colspan => "3"} 4 сем
+        %tr
+          %td
+            1
+          %td
+            Экология
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+            1
+          %th
+            0
+          %th
+            1
+          %th
+          %th
+          %th
+        %tr
+          %td
+            2
+          %td
+            Высшая математика
+          %th
+            3
+          %th
+            0
+          %th
+            3
+          %th
+            3
+          %th
+            0
+          %th
+            3
+          %th
+            2
+          %th
+            0
+          %th
+            2
+          %th
+          %th
+          %th
+        %tr
+          %td
+            3
+          %td
+            Русский язык и культура речи
+          %th
+            1
+          %th
+            0
+          %th
+            2
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+        %tr
+          %td
+            4
+          %td
+            Основы дискретной математики
+          %th
+            2
+          %th
+            0
+          %th
+            1
+          %th
+            3
+          %th
+            0
+          %th
+            2
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+        %tr
+          %td
+            5
+          %td
+            Основы программирования и алгоритмические языки
+          %th
+            3
+          %th
+            2
+          %th
+            0
+          %th
+            3
+          %th
+            3
+          %th
+            0
+          %th
+            0
+          %th
+            0
+          %th
+            1
+          %th
+          %th
+          %th
+        %tr
+          %td
+            6
+          %td
+            Основы экологии
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+            1
+          %th
+            0
+          %th
+            0
+          %th
+          %th
+          %th
+        %tr
+          %td
+            7
+          %td
+            Теория вероятностей и
+            = succeed "\u{43c}\u{430}\u{442}\u{435}\u{43c}\u{430}\u{442}\u{438}\u{447}\u{435}\u{441}\u{43a}\u{430}\u{44f}" do
+              %br/
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+            3
+          %th
+            1
+          %th
+            0
+          %th
+          %th
+          %th
+        %tr
+          %td
+            8
+          %td
+            Физика
+          %th
+            2
+          %th
+            2
+          %th
+            0
+          %th
+            2
+          %th
+            2
+          %th
+            0
+          %th
+            2
+          %th
+            1
+          %th
+            0
+          %th
+          %th
+          %th
+        %tr
+          %td
+            9
+          %td
+            Основы электротехники и электроники
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+            2
+          %th
+            1
+          %th
+            1
+          %th
+          %th
+          %th
+        %tr
+          %td
+            10
+          %td
+            Численные методы в информатике
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+            2
+          %th
+            2
+          %th
+            0
+          %th
+            0
+          %th
+            0
+          %th
+            1
+        %tr
+          %td
+            11
+          %td
+            Методы исследования операций
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+          %th
+            1
+          %th
+            1
+          %th
+            0
+          %th
+            2
+          %th
+            1
+          %th
+            1

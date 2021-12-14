@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Главная - Жадан
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/script.js"}
+  %body{:onbeforeunload => "saveToCookies('index')"}
+    .body
+    = Haml::Engine.new(File.read('./includes/_header.haml')).render
+    %section.container
+      %h1.centered
+        Главная
+      %img.mePhoto{:alt => "photo me", :src => "images/me.jpg", :title => "Me"}/
+      %p.indexText
+        Жадан Виктор Борисович
+        Группа ИС/б-19-1
+        Лабораторная работа №1 "Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS"

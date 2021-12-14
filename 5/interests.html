@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Интересы - Жадан</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="js/script.js"></script>
+	</head>
+	<body onbeforeunload="saveToCookies('interests')">
+	
+		<header>
+			<nav> 
+				<div id="date"></div>
+				<div id="time-node"></div>
+				<script>
+					getDateAndTime();
+				</script>
+				<ul>
+					<li class = "menu_nav_item"
+						onmouseover="onMouseOverImage(this)"
+             			onmouseout="onMouseOutImage(this)">
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+             			<a href="index.html">Главная</a>
+					<li class = "menu_nav_item"
+						onmouseover="onMouseOverImage(this)"
+             			onmouseout="onMouseOutImage(this)">
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+             			<a href="about.html">Обо мне</a>
+					<li class = "menu_nav_item"
+					onclick="showDropdown()"
+					>
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+             			<a >Мои интересы</a>
+						<ul id="interest_drop_menu" class="dropmenu">
+			                <li><a href="interests.html#games">Мои любимые игры</a></li>
+			                <li><a href="interests.html#films">Мои любимые фильмы</a></li>
+			                <li><a href="interests.html#music">Моя любимая музыка</a></li>
+			            </ul>
+					<li class = "menu_nav_item"
+						onmouseover="onMouseOverImage(this)"
+             			onmouseout="onMouseOutImage(this)">
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/> 
+             			<a href="study.html">Учеба</a>
+					<li class = "menu_nav_item"
+						onmouseover="onMouseOverImage(this)"
+             			onmouseout="onMouseOutImage(this)">
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+             			<a href="photos.html">Фотоальбом</a>
+					<li class = "menu_nav_item"
+						onmouseover="onMouseOverImage(this)"
+             			onmouseout="onMouseOutImage(this)">
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+						<a href="contacts.html">Контакт</a>
+             		<li class = "menu_nav_item"
+						onmouseover="onMouseOverImage(this)"
+             			onmouseout="onMouseOutImage(this)">
+             			 <img class = "menu_logo_img" src="images/logo.jpg"/>
+             			<a href="tests.html">Тест</a>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container">
+			<h1 class="centered">
+				Мои интересы
+			</h1>
+			<script>
+				showListOfInterests(
+						["#games", "Мои любимые игры"],
+						["#films", "Мои любимые фильмы"],
+						["#music", "Моя любимая музыка"]);
+			</script>
+
+			<section>
+				<a id="games"></a>
+				<h2>
+					Мои любимые игры
+				</h2>
+				<p>
+					Libero consequat condimentum posuere dui nulla a taciti tempor consectetur conubia aenean habitasse ut placerat consectetur fames. Per parturient erat odio condimentum parturient mattis scelerisque eu duis nascetur in fringilla justo ut scelerisque.
+				</p>
+				<img src="images/deusex.jpg" alt="photo" style="width:25%" />
+				<img src="images/AIM.jpeg" alt="photo" style="width:25%" />
+			</section>
+
+			<section>
+				<a id="films"></a>
+				<h2>
+					Мои любимые фильмы
+				</h2>
+				<p>
+					Libero consequat condimentum posuere dui nulla a taciti tempor consectetur conubia aenean habitasse ut placerat consectetur fames. Per parturient erat odio condimentum parturient mattis scelerisque eu duis nascetur in fringilla justo ut scelerisque.
+				</p>
+				<img src="images/godfather.jpg" alt="photo" style="width:25%" />	
+				<img src="images/shrek.jpg" alt="photo" style="width:25%" />	
+			</section>
+			<section>
+				<a id="music"></a>
+				<h2>
+					Моя любимая музыка
+				</h2>
+				<p>
+					Libero consequat condimentum posuere dui nulla a taciti tempor consectetur conubia aenean habitasse ut placerat consectetur fames. Per parturient erat odio condimentum parturient mattis scelerisque eu duis nascetur in fringilla justo ut scelerisque.
+				</p>
+				<img src="images/imaginedragons.jpg" alt="photo" style="width:25%" />	
+				<img src="images/nickelback.jpg" alt="photo" style="width:25%" />		
+			</section>
+		</div>
+		</body>
+</html>
