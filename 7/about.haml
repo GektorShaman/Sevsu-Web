@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Обо мне - Жадан
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/script.js"}
+  %body{:onbeforeunload => "saveToCookies('about')"}
+    .body
+    = Haml::Engine.new(File.read('./includes/_header.haml')).render
+    %section.container
+      %h1.centered
+        Обо мне
+      %p
+        Libero consequat condimentum posuere dui nulla a taciti tempor consectetur conubia aenean habitasse ut placerat consectetur fames. Per parturient erat odio condimentum parturient mattis scelerisque eu duis nascetur in fringilla justo ut scelerisque. Ac quis ullamcorper vestibulum conubia viverra dis vestibulum ullamcorper neque himenaeos elit elit sed hac metus commodo amet vestibulum. Ullamcorper lacinia at tellus nam lobortis a a dapibus eros accumsan condimentum eu quam dui imperdiet diam rhoncus semper nam a a himenaeos. Cum integer condimentum adipiscing adipiscing ad aliquam condimentum vivamus ad ut a a vestibulum vulputate curabitur a. Metus litora eget parturient ad eu a etiam.
+      %p
+        Per parturient erat odio condimentum parturient mattis scelerisque eu duis nascetur in fringilla justo ut scelerisque.
+      %img{:alt => "photo me", :src => "images/me.jpg", :style => "width:20rem", :title => "Me"}/

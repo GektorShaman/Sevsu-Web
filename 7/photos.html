@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Фотоальбом - Жадан</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body onbeforeunload="saveToCookies(&#39;photos&#39;)">
+<header>
+<nav>
+<div id='date'></div>
+<div id='time-node'></div>
+<ul>
+<li class='menu_nav_item'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='index.html'>Главная</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='about.html'>Обо мне</a>
+</li>
+<li class='menu_nav_item' onclick='showDropdown()'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a>Мои интересы</a>
+<ul class='dropmenu' id='interest_drop_menu'>
+<li>
+<a href='interests.html#games'>Мои любимые игры</a>
+</li>
+<li>
+<a href='interests.html#films'>Мои любимые фильмы</a>
+</li>
+<li>
+<a href='interests.html#music'>Моя любимая музыка</a>
+</li>
+</ul>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='study.html'>Учеба</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='photos.html'>Фотоальбом</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='contacts.html'>Контакт</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='tests.html'>Тест</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='watch_history.html'>История просмотра</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div class="container">
+<h1 class="centered">
+Фотоальбом
+</h1>
+<div id="app">
+	<div class="album">
+	    <album-item 
+	    v-for="(photo,i) in photos" 
+	    :key="i" 
+	    :package="photo" 
+	    @click="index = i">
+	    </album-item>
+  	</div>
+	  <img-popup 
+	  v-if="index !== -1" 
+	  :photos="photos" 
+	  :index="index" 
+	  @close="index=-1">
+	  </img-popup>
+	</div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/jQuery.js" type="text/javascript"></script>
+<script src="js/script.js"></script>
+<script>
+  getDateAndTime();
+</script>
+</body>
+</html>

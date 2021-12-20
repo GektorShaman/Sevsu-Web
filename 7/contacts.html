@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Контакт - Жадан</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/jQuery.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body onbeforeunload="saveToCookies(&#39;contacts&#39;)">
+<div class="body"></div>
+<header>
+<nav>
+<div id='date'></div>
+<div id='time-node'></div>
+<script>
+  getDateAndTime();
+</script>
+<ul>
+<li class='menu_nav_item'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='index.html'>Главная</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='about.html'>Обо мне</a>
+</li>
+<li class='menu_nav_item' onclick='showDropdown()'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a>Мои интересы</a>
+<ul class='dropmenu' id='interest_drop_menu'>
+<li>
+<a href='interests.html#games'>Мои любимые игры</a>
+</li>
+<li>
+<a href='interests.html#films'>Мои любимые фильмы</a>
+</li>
+<li>
+<a href='interests.html#music'>Моя любимая музыка</a>
+</li>
+</ul>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='study.html'>Учеба</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='photos.html'>Фотоальбом</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='contacts.html'>Контакт</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='tests.html'>Тест</a>
+</li>
+<li class='menu_nav_item' onmouseout='onMouseOutImage(this)' onmouseover='onMouseOverImage(this)'>
+<img class='menu_logo_img' src='images/logo.jpg'>
+<a href='watch_history.html'>История просмотра</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<section class="container">
+<h1 class="centered">
+Контакт
+</h1>
+<div class="contact">
+<form action="mailto:zhadan.viktor@gmail.com" method="POST" name="contact_form" onsubmit="return validate_form()">
+<label for="name">ФИО</label>
+<input id="name" onblur="validate_fio(&#39;hintName&#39;)" onclick="hideCalendar()" placeholder="ФИО" type="text">
+<span class="hint" id="hintName"></span>
+<br>
+<div class="popover">Введите ваше ФИО</div>
+<label for="phone">Телефон</label>
+<input id="phone" onblur="validate_phone(&#39;hintPhone&#39;)" onclick="hideCalendar()" placeholder="Телефон" type="text">
+<br>
+<span class="hint" id="hintPhone"></span>
+<br>
+<label>Пол</label>
+<div class="gender-select">
+<input checked="checked" id="gender_male" name="gender" onclick="hideCalendar()" type="radio" value="male">
+<label for="gender_male">Мужской</label>
+<input id="gender_female" name="gender" onclick="hideCalendar()" type="radio" value="female">
+<label for="gender_female">Женский</label>
+</div>
+<label for="dateOfBirth">Дата рождения</label>
+<input id="dateOfBirth" name="dateOfBirth" onclick="showCalendar(new Date())" readonly="readonly" value="">
+<br>
+<div id="calendar">
+Месяц:
+<select id="month" onclick="redrawCalendar()"></select>
+Год:
+<select id="year" onclick="redrawCalendar()"></select>
+</div>
+<label for="email">Электронная почта</label>
+<input id="email" onblur="validate_email(&#39;hintMail&#39;)" onclick="hideCalendar()" placeholder="Электронная почта" type="email">
+<br>
+<span class="hint" id="hintMail"></span>
+<br>
+<textarea id="message" name="message" onblur="validate_mes()" onclick="hideCalendar()" placeholder="Сообщение"></textarea>
+<div class="submit-container">
+<input class="submit" type="submit" value="Отправить">
+<input class="submit" type="reset" value="Очистить форму">
+</div>
+</form>
+</div>
+</section>
+</body>
+</html>
